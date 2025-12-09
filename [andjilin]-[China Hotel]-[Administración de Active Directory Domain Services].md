@@ -7,7 +7,7 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 
 ---
 
-# 🧩 Índice
+## 🧩 Índice
 
 1. [Instalar Hyper‑V](#instalar-hyper-v)
 2. [Crear máquina virtual del controlador de dominio (TAILWIND-DC1)](#crear-controlador-de-dominio)
@@ -18,7 +18,7 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 
 ---
 
-# 🖥️ Instalar Hyper‑V
+## 🖥️ Instalar Hyper‑V
 
 1. Inicia sesión en Windows 10/11 con permisos de administrador.
 2. Abre **Configuración → Sistema → Características opcionales**.
@@ -39,15 +39,15 @@ New-NetNat -Name "NATNetwork" –InternalIPInterfaceAddressPrefix "10.10.10.0/24
 
 ---
 
-# 🏛️ Crear controlador de dominio
+## 🏛️ Crear controlador de dominio
 
-## 1. Crear máquina virtual TAILWIND-DC1
+### 1. Crear máquina virtual
 
 1. Hyper‑V → **Nuevo → Máquina virtual**.
-2. Nombre: **TAILWIND-DC1**.
+2. Nombre: **ChinaHotel**.
 3. Generación 2.
 4. RAM: **4096 MB**, con memoria dinámica.
-5. Red: **NATSwitch**.
+5. Red: **NAT**.
 6. Disco: usar valores por defecto.
 7. Instalar SO desde ISO `SERVER_EVAL_x64FRE_en-us.iso`.
 8. Finalizar.
@@ -72,14 +72,14 @@ DNS Secundario: 8.8.8.8
 
 ---
 
-# 🌐 Promocionar TAILWIND-DC1 a Controlador de Dominio
+## 🌐 Promocionar China Hotel a Controlador de Dominio
 
 1. Abrir **Administrador del servidor**.
 2. **Agregar roles y características**.
 3. Seleccionar rol: **Servicios de dominio de Active Directory**.
 4. Instalar.
 5. Notificación → **Promocionar este servidor a controlador de dominio**.
-6. Crear **nuevo bosque** → Dominio raíz: `tailwindtraders.internal`.
+6. Crear **nuevo bosque** → Dominio raíz: `chinahotel.internal`.
 7. Contraseña DSRM: `Pa55w.rdPa55w.rd`.
 8. Finalizar e instalar (reinicio automático).
 
@@ -87,10 +87,10 @@ DNS Secundario: 8.8.8.8
 
 # 🖥️ Crear servidor miembro
 
-## 1. Crear VM TAILWIND-MBR1
+## 1. Crear VM ChinaHotelMiembro1
 
 1. Hyper‑V → Nueva máquina virtual.
-2. Nombre: **TAILWIND-MBR1**.
+2. Nombre: **ChinaHotelMiembro1**.
 3. Generación 2.
 4. RAM 4096 MB.
 5. NATSwitch.
@@ -111,19 +111,18 @@ DNS Primario: 10.10.10.10
 DNS Secundario: 8.8.8.8
 ```
 
-4. Cambiar nombre: **TAILWIND-MBR1**.
-5. Reiniciar.
+4. Reiniciar.
 
 ---
 
 # 🔗 Unir TAILWIND-MBR1 al dominio
 
 1. Abrir **Propiedades del sistema**.
-2. Miembro de → **Dominio: TAILWINDTRADERS**.
+2. Miembro de → **Dominio: CHINAHOTEL**.
 3. Credenciales:
 
 ```
-Usuario: TAILWINDTRADERS\Administrator
+Usuario: CHINAHOTEL\Administrator
 Contraseña: Pa55w.rdPa55w.rd
 ```
 
