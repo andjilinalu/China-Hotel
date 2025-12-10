@@ -19,8 +19,10 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 ---
 
 ## 🖥️ Instalar Hyper‑V
+<img width="418" height="366" alt="image" src="https://github.com/user-attachments/assets/64f5dff2-00cb-4717-9c25-073380fd14da" />
 
-1. Iniciar sesión en Windows 10/11 con permisos de administrador.
+
+1. Iniciar sesión en Windows 10.
 2. Abrimos **Configuración → Sistema → Características opcionales**.
 3. Seleccionar **Más funciones de Windows → Hyper‑V**.
 4. Aceptar y **reiniciar**.
