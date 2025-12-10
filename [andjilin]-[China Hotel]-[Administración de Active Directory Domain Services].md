@@ -20,9 +20,9 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 
 ## 🖥️ Instalar Hyper‑V
 
-1. Inicia sesión en Windows 10/11 con permisos de administrador.
-2. Abre **Configuración → Sistema → Características opcionales**.
-3. Selecciona **Más funciones de Windows → Hyper‑V**.
+1. Iniciar sesión en Windows 10/11 con permisos de administrador.
+2. Abrimos **Configuración → Sistema → Características opcionales**.
+3. Seleccionar **Más funciones de Windows → Hyper‑V**.
 4. Aceptar y **reiniciar**.
 5. Abrir **Hyper‑V Manager** y fijarlo en la barra de tareas.
 6. Configurar rutas por defecto:
@@ -68,7 +68,7 @@ DNS Primario: 1.1.1.1
 DNS Secundario: 8.8.8.8
 ```
 
-6. Cambiar nombre del equipo → **TAILWIND-DC1** y reiniciar.
+6. Cambiar nombre del equipo → **CHINAHOTEL-DC1** y reiniciar.
 
 ---
 
@@ -115,7 +115,7 @@ DNS Secundario: 8.8.8.8
 
 ---
 
-# 🔗 Unir TAILWIND-MBR1 al dominio
+# 🔗 Unir CHINAHOTEL-MBR1 al dominio
 
 1. Abrir **Propiedades del sistema**.
 2. Miembro de → **Dominio: CHINAHOTEL**.
