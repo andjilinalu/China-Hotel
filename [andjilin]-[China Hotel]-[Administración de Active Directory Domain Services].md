@@ -75,6 +75,7 @@ DNS Secundario: 8.8.8.8
 
 
 6. Cambiar nombre del equipo → **CHINAHOTEL-DC1** y reiniciar.
+<img width="739" height="330" alt="image" src="https://github.com/user-attachments/assets/1c6bc375-6a4f-4965-a682-6c2b0cf576e4" />
 
 ---
 
