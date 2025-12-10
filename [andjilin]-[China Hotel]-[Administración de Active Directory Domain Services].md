@@ -71,6 +71,8 @@ Puerta de enlace: 10.10.10.1
 DNS Primario: 1.1.1.1
 DNS Secundario: 8.8.8.8
 ```
+<img width="397" height="452" alt="image" src="https://github.com/user-attachments/assets/a0407afd-509d-46bd-8996-24804d07dad2" />
+
 
 6. Cambiar nombre del equipo → **CHINAHOTEL-DC1** y reiniciar.
 
