@@ -138,7 +138,7 @@ Contraseña: Pa55w.rdPa55w.rd
 4. Mensaje de bienvenida.
 <img width="369" height="149" alt="image" src="https://github.com/user-attachments/assets/fd70c9dd-437f-4849-8cdc-8761a156b4dc" />
 
-6. Reiniciar.
+5. Reiniciar.
 
 ---
 
