@@ -117,24 +117,28 @@ Puerta de enlace: 10.10.10.1
 DNS Primario: 10.10.10.10
 DNS Secundario: 8.8.8.8
 ```
+<img width="398" height="453" alt="image" src="https://github.com/user-attachments/assets/7dc3d0be-96e5-4b3b-aa32-8bd696996d27" />
 
 4. Reiniciar.
 
 ---
 
-# 🔗 Unir CHINAHOTEL-MBR1 al dominio
+# 🔗 Unir TAILWIN-MBR1 al dominio
 
 1. Abrir **Propiedades del sistema**.
 2. Miembro de → **Dominio: CHINAHOTEL**.
 3. Credenciales:
 
 ```
-Usuario: CHINAHOTEL\Administrator
+Usuario: TAILWINTRADERS\Administrator
 Contraseña: Pa55w.rdPa55w.rd
 ```
+<img width="791" height="466" alt="image" src="https://github.com/user-attachments/assets/0bfbdf84-ce4d-4638-976c-0551d6be4f37" />
 
 4. Mensaje de bienvenida.
-5. Reiniciar.
+<img width="369" height="149" alt="image" src="https://github.com/user-attachments/assets/fd70c9dd-437f-4849-8cdc-8761a156b4dc" />
+
+6. Reiniciar.
 
 ---
 
