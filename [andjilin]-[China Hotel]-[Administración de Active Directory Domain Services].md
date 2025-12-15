@@ -251,6 +251,8 @@ Se transfiere el rol **RID Master** desde **TAILWIND-DC1** hacia **TAILWIND-MBR1
 3. En la pestaña **RID**, seleccionar **Cambiar**.
 4. Confirmar con **Sí**.
 5. Cerrar la ventana de Maestros de operaciones.
+<img width="756" height="530" alt="image" src="https://github.com/user-attachments/assets/209e6483-84bf-4d9f-9f04-04ed6e9a7650" />
+
 
 ---
 
@@ -269,10 +271,12 @@ tailwindtraders\Administrator
 2. Abrir **Herramientas → Sitios y servicios de Active Directory**.
 3. Clic derecho en **Sitios → Nuevo sitio**.
 4. Nombre del sitio: **Sydney**.
-5. Seleccionar **DEFAULTIPSITELINK** y confirmar.
-6. Expandir la carpeta **Sitios**.
-7. Clic derecho en **Subredes → Nueva subred**.
-8. Prefijo de subred:
+<img width="753" height="529" alt="image" src="https://github.com/user-attachments/assets/598d831a-4d9e-4d3f-8d60-a48f1bfba1ed" />
+
+6. Seleccionar **DEFAULTIPSITELINK** y confirmar.
+7. Expandir la carpeta **Sitios**.
+8. Clic derecho en **Subredes → Nueva subred**.
+9. Prefijo de subred:
 
 ```
 172.16.1.0/24
@@ -280,6 +284,7 @@ tailwindtraders\Administrator
 
 9. Asociar la subred al sitio **Sydney**.
 10. Aceptar y cerrar la consola.
+<img width="434" height="538" alt="image" src="https://github.com/user-attachments/assets/eb2ea1ba-f5ee-48fd-8f2a-d84771660c41" />
 
 ---
 
@@ -326,5 +331,5 @@ La infraestructura de Active Directory ahora cuenta con:
 * Rol FSMO transferido
 * Sitio y subred configurados
 
-Documento listo para subirse a **GitHub** como archivo `.md`.
+#  Configuración de operaciones de administración de usuarios
 
