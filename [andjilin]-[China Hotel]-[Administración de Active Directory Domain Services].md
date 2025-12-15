@@ -181,3 +181,149 @@ flowchart TD
 # ✅ Preparación completada
 
 # Configuración de operaciones de controlador de dominio
+
+# Proyecto: Administración avanzada de Active Directory (AZ-1008)
+
+**Objetivo:** 
+
+Ampliar la infraestructura de **Active Directory** promoviendo un segundo controlador de dominio, transfiriendo roles FSMO y configurando **sitios y subredes** para una correcta replicación y administración del directorio.
+
+---
+
+# 🧩 Índice
+
+1. [Promover servidor miembro a controlador de dominio](#promover-servidor-miembro-a-controlador-de-dominio)
+2. [Transferir roles FSMO (RID Master)](#transferir-roles-fsmo)
+3. [Crear sitio de Active Directory y subred](#crear-sitio-de-active-directory-y-subred)
+4. [Diagramas de flujo](#diagramas-de-flujo)
+
+---
+
+# 🏛️ Promover servidor miembro a controlador de dominio
+
+En esta sección se promueve **TAILWIND-MBR1** a controlador de dominio adicional dentro del dominio existente `tailwindtraders.internal`.
+
+## Pasos
+
+1. Iniciar sesión en **TAILWIND-MBR1** como:
+
+```
+TAILWINDTRADERS\Administrator
+Contraseña: Pa55w.rdPa55w.rd
+```
+
+2. Abrir **Administrador del servidor → Administrar → Agregar roles y características**.
+3. Seleccionar **Instalación basada en roles o características**.
+4. Elegir el servidor **TAILWIND-MBR1**.
+5. Marcar el rol **Servicios de dominio de Active Directory (AD DS)**.
+6. Agregar las características requeridas y continuar.
+7. Confirmar e iniciar la instalación.
+8. Al finalizar, hacer clic en el **icono de notificación**.
+9. Seleccionar **Promocionar este servidor a controlador de dominio**.
+10. Elegir **Agregar un controlador de dominio a un dominio existente**.
+11. Verificar el dominio: `tailwindtraders.internal`.
+<img width="763" height="562" alt="image" src="https://github.com/user-attachments/assets/e042d208-da90-493b-a2f7-632c09cf93f6" />
+13. Reautenticarse como Administrator.
+<img width="454" height="339" alt="image" src="https://github.com/user-attachments/assets/e2e41b4b-043c-49fb-8f9c-db85f1c20d2d" />
+
+15. Introducir la contraseña **DSRM**:
+
+```
+Pa55w.rdPa55w.rd
+```
+<img width="761" height="554" alt="image" src="https://github.com/user-attachments/assets/a04959ea-d634-4b46-99f8-05262d20dd8d" />
+
+14. Aceptar opciones por defecto (DNS, rutas, revisión).
+15. Instalar y permitir el **reinicio automático**.
+
+---
+
+# 🔁 Transferir roles FSMO
+
+Se transfiere el rol **RID Master** desde **TAILWIND-DC1** hacia **TAILWIND-MBR1**.
+
+## Pasos
+
+1. En **TAILWIND-MBR1**, abrir:
+   **Herramientas → Usuarios y equipos de Active Directory**.
+2. Clic derecho sobre el dominio → **Todas las tareas → Maestros de operaciones**.
+3. En la pestaña **RID**, seleccionar **Cambiar**.
+4. Confirmar con **Sí**.
+5. Cerrar la ventana de Maestros de operaciones.
+
+---
+
+# 🌍 Crear sitio de Active Directory y subred
+
+Esta configuración optimiza la replicación y representa una ubicación física de red.
+
+## Pasos
+
+1. Iniciar sesión en **TAILWIND-DC1** como:
+
+```
+tailwindtraders\Administrator
+```
+
+2. Abrir **Herramientas → Sitios y servicios de Active Directory**.
+3. Clic derecho en **Sitios → Nuevo sitio**.
+4. Nombre del sitio: **Sydney**.
+5. Seleccionar **DEFAULTIPSITELINK** y confirmar.
+6. Expandir la carpeta **Sitios**.
+7. Clic derecho en **Subredes → Nueva subred**.
+8. Prefijo de subred:
+
+```
+172.16.1.0/24
+```
+
+9. Asociar la subred al sitio **Sydney**.
+10. Aceptar y cerrar la consola.
+
+---
+
+# 📊 Diagramas de flujo
+
+## 🏛️ Flujo: Promoción a controlador de dominio adicional
+
+```mermaid
+flowchart TD
+    A[Servidor miembro] --> B[Instalar rol AD DS]
+    B --> C[Promocionar a DC]
+    C --> D[Unirse al dominio existente]
+    D --> E[Configurar DSRM]
+    E --> F[Reinicio]
+```
+
+## 🔁 Flujo: Transferencia de rol FSMO
+
+```mermaid
+flowchart TD
+    A[Abrir Usuarios y equipos AD] --> B[Maestros de operaciones]
+    B --> C[Seleccionar rol RID]
+    C --> D[Transferir rol]
+    D --> E[Confirmar]
+```
+
+## 🌍 Flujo: Creación de sitio y subred
+
+```mermaid
+flowchart TD
+    A[Abrir Sitios y servicios AD] --> B[Crear nuevo sitio]
+    B --> C[Asignar IP Site Link]
+    C --> D[Crear subred]
+    D --> E[Asociar subred al sitio]
+```
+
+---
+
+# ✅ Resultado
+
+La infraestructura de Active Directory ahora cuenta con:
+
+* Dos controladores de dominio
+* Rol FSMO transferido
+* Sitio y subred configurados
+
+Documento listo para subirse a **GitHub** como archivo `.md`.
+
