@@ -670,6 +670,8 @@ Nombre: Domain Admin Password Policy
 Precedencia: 1
 Longitud mínima de contraseña: 16
 ```
+<img width="896" height="543" alt="image" src="https://github.com/user-attachments/assets/50a20d3a-b616-4b07-b7ee-67bd60f4a4ad" />
+
 
 6. Guardar la política.
 7. Abrir la política creada.
@@ -681,6 +683,10 @@ Domain Admins
 ```
 
 10. Comprobar nombres y confirmar.
+(El manual esta mal, me pone nombre no encontrado ya que no hemos creado ningun grupo llamado "Domain Admins" en ningu sitio)
+
+<img width="478" height="362" alt="image" src="https://github.com/user-attachments/assets/4ef7a2b8-00d9-4802-b61c-56d0d5b8a5ec" />
+
 
 ---
 
