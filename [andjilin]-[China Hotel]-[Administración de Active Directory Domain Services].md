@@ -7,7 +7,7 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 
 ---
 
-## 🧩 Índice
+## Índice
 
 1. [Instalar Hyper‑V]
 2. [Crear máquina virtual del controlador de dominio (TAILWIND-DC1)]
@@ -18,7 +18,7 @@ Configurar un entorno de laboratorio con **Hyper‑V**, un **controlador de domi
 
 ---
 
-## 🖥️ Instalar Hyper‑V
+## Instalar Hyper‑V
 <img width="418" height="366" alt="image" src="https://github.com/user-attachments/assets/64f5dff2-00cb-4717-9c25-073380fd14da" />
 
 
@@ -43,7 +43,7 @@ New-NetNat -Name "NATNetwork" –InternalIPInterfaceAddressPrefix "10.10.10.0/24
 
 ---
 
-## 🏛️ Crear controlador de dominio
+## Crear controlador de dominio
 
 ### 1. Crear máquina virtual
 
@@ -79,7 +79,7 @@ DNS Secundario: 8.8.8.8
 
 ---
 
-## 🌐 Promocionar TAILWIND-DC1 a Controlador de Dominio
+## Promocionar TAILWIND-DC1 a Controlador de Dominio
 
 1. Abrir **Administrador del servidor**.
 2. **Agregar roles y características**.
@@ -92,7 +92,7 @@ DNS Secundario: 8.8.8.8
 
 ---
 
-# 🖥️ Crear servidor miembro
+# Crear servidor miembro
 
 ## 1. Crear VM ChinaHotelMiembro1
 
@@ -123,7 +123,7 @@ DNS Secundario: 8.8.8.8
 
 ---
 
-# 🔗 Unir TAILWIND-MBR1 al dominio
+# Unir TAILWIND-MBR1 al dominio
 
 1. Abrir **Propiedades del sistema**.
 2. Miembro de → **Dominio: TAILWINDTRADERS**.
@@ -142,7 +142,7 @@ Contraseña: Pa55w.rdPa55w.rd
 
 ---
 
-# 📊 Diagramas de flujo
+# Diagramas de flujo
 
 ## 🔧 Flujo: Instalación de Hyper‑V
 
@@ -155,7 +155,7 @@ flowchart TD
     E --> F[Fin]
 ```
 
-## 🏛️ Flujo: Promoción a Controlador de Dominio
+## Flujo: Promoción a Controlador de Dominio
 
 ```mermaid
 flowchart TD
@@ -166,7 +166,7 @@ flowchart TD
     E --> F[Instalar y reiniciar]
 ```
 
-## 🔗 Flujo: Unión de servidor al dominio
+## Flujo: Unión de servidor al dominio
 
 ```mermaid
 flowchart TD
@@ -178,7 +178,7 @@ flowchart TD
 
 ---
 
-# ✅ Preparación completada
+# Preparación completada
 
 # Configuración de operaciones de controlador de dominio
 
@@ -190,7 +190,7 @@ Ampliar la infraestructura de **Active Directory** promoviendo un segundo contro
 
 ---
 
-# 🧩 Índice
+# Índice
 
 1. [Promover servidor miembro a controlador de dominio]
 2. [Transferir roles FSMO (RID Master)
@@ -199,7 +199,7 @@ Ampliar la infraestructura de **Active Directory** promoviendo un segundo contro
 
 ---
 
-# 🏛️ Promover servidor miembro a controlador de dominio
+# Promover servidor miembro a controlador de dominio
 
 En esta sección se promueve **TAILWIND-MBR1** a controlador de dominio adicional dentro del dominio existente `tailwindtraders.internal`.
 
@@ -239,7 +239,7 @@ Pa55w.rdPa55w.rd
 
 ---
 
-# 🔁 Transferir roles FSMO
+# Transferir roles FSMO
 
 Se transfiere el rol **RID Master** desde **TAILWIND-DC1** hacia **TAILWIND-MBR1**.
 
@@ -256,7 +256,7 @@ Se transfiere el rol **RID Master** desde **TAILWIND-DC1** hacia **TAILWIND-MBR1
 
 ---
 
-# 🌍 Crear sitio de Active Directory y subred
+# Crear sitio de Active Directory y subred
 
 Esta configuración optimiza la replicación y representa una ubicación física de red.
 
@@ -288,9 +288,9 @@ tailwindtraders\Administrator
 
 ---
 
-# 📊 Diagramas de flujo
+# Diagramas de flujo
 
-## 🏛️ Flujo: Promoción a controlador de dominio adicional
+## Flujo: Promoción a controlador de dominio adicional
 
 ```mermaid
 flowchart TD
@@ -301,7 +301,7 @@ flowchart TD
     E --> F[Reinicio]
 ```
 
-## 🔁 Flujo: Transferencia de rol FSMO
+## Flujo: Transferencia de rol FSMO
 
 ```mermaid
 flowchart TD
@@ -311,7 +311,7 @@ flowchart TD
     D --> E[Confirmar]
 ```
 
-## 🌍 Flujo: Creación de sitio y subred
+## Flujo: Creación de sitio y subred
 
 ```mermaid
 flowchart TD
@@ -340,7 +340,7 @@ Gestionar **usuarios, grupos y unidades organizativas (OU)** en Active Directory
 
 ---
 
-# 🧩 Índice
+# Índice
 
 1. [Crear Unidades Organizativas (OU)]
 2. [Crear usuarios]
@@ -354,7 +354,7 @@ Gestionar **usuarios, grupos y unidades organizativas (OU)** en Active Directory
 
 ---
 
-# 🗂️ Crear Unidades Organizativas (OU)
+# Crear Unidades Organizativas (OU)
 
 Se crean tres OU para organizar los objetos del dominio por ubicación.
 
@@ -372,7 +372,7 @@ Se crean tres OU para organizar los objetos del dominio por ubicación.
 
 ---
 
-# 👤 Crear usuarios
+# Crear usuarios
 
 Se crean usuarios contratistas y se configura la expiración de la cuenta.
 
@@ -467,7 +467,7 @@ Protected Users
 
 ---
 
-# 🔐 Delegar permisos a un grupo sobre una OU
+# Delegar permisos a un grupo sobre una OU
 
 Se delega la capacidad de restablecer contraseñas en la OU Sydney.
 
@@ -494,7 +494,7 @@ Restablecer contraseñas de usuario y forzar el cambio en el próximo inicio de 
 
 ---
 
-# 🏙️ Configurar atributo City y búsqueda
+# Configurar atributo City y búsqueda
 
 Se asigna el atributo **City** a un usuario y se valida mediante búsqueda avanzada.
 
@@ -524,7 +524,7 @@ Valor: Sydney
 
 ---
 
-# 🚫 Deshabilitar usuario Melbourne
+# Deshabilitar usuario Melbourne
 
 ## Pasos
 
@@ -536,7 +536,7 @@ Valor: Sydney
 
 ---
 
-# 🔑 Restablecer contraseña del usuario Brisbane
+# Restablecer contraseña del usuario Brisbane
 
 ## Pasos
 
@@ -553,9 +553,9 @@ Pa66w.rdPa66w.rd
 
 ---
 
-# 📊 Diagramas de flujo
+# Diagramas de flujo
 
-## 🗂️ Flujo: Gestión de usuarios y OU
+## Flujo: Gestión de usuarios y OU
 
 ```mermaid
 flowchart TD
@@ -565,7 +565,7 @@ flowchart TD
     D --> E[Delegar permisos]
 ```
 
-## 🔐 Flujo: Administración de cuentas
+## Flujo: Administración de cuentas
 
 ```mermaid
 flowchart TD
@@ -597,7 +597,7 @@ Configurar **políticas de contraseñas en Active Directory** para reforzar la s
 
 ---
 
-# 🧩 Índice
+# Índice
 
 1. [Configurar la política de contraseñas del dominio]
 2. [Configurar una política de contraseñas de grano fino]
@@ -606,7 +606,7 @@ Configurar **políticas de contraseñas en Active Directory** para reforzar la s
 
 ---
 
-# 🔐 Configurar la política de contraseñas del dominio
+# Configurar la política de contraseñas del dominio
 
 Esta política afecta a **todos los usuarios del dominio**, salvo aquellos que tengan políticas de grano fino aplicadas.
 
@@ -647,7 +647,7 @@ Configuración del equipo
 
 ---
 
-# 🧬 Configurar una política de contraseñas de grano fino
+# Configurar una política de contraseñas de grano fino
 
 Las políticas de grano fino permiten aplicar **requisitos distintos** a usuarios o grupos específicos.
 
@@ -690,7 +690,7 @@ Domain Admins
 
 ---
 
-# ♻️ Habilitar la Papelera de reciclaje de Active Directory
+# Habilitar la Papelera de reciclaje de Active Directory
 
 ## Pasos
 
@@ -710,9 +710,9 @@ Habilitar papelera de reciclaje
 
 ---
 
-# 📊 Diagramas de flujo
+# Diagramas de flujo
 
-## 🔐 Flujo: Política de contraseñas del dominio
+## Flujo: Política de contraseñas del dominio
 
 ```mermaid
 flowchart TD
@@ -722,7 +722,7 @@ flowchart TD
     D --> E[Aplicar cambios]
 ```
 
-## 🧬 Flujo: Política de grano fino
+## Flujo: Política de grano fino
 
 ```mermaid
 flowchart TD
@@ -732,7 +732,7 @@ flowchart TD
     D --> E[Aplicar a Domain Admins]
 ```
 
-## ♻️ Flujo: Papelera de reciclaje de AD
+## Flujo: Papelera de reciclaje de AD
 
 ```mermaid
 flowchart TD
