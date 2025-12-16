@@ -796,7 +796,7 @@ Bosque: tailwindtraders.internal
 
 ```
 Configuración del equipo
- → Políticas
+ → Directivas
    → Configuración de Windows
      → Configuración de seguridad
        → Políticas locales
@@ -815,9 +815,12 @@ Seguridad de red: Restringir NTLM: Autenticación NTLM en este dominio
 ```
 Denegar todo
 ```
+<img width="945" height="585" alt="image" src="https://github.com/user-attachments/assets/cb1c46ea-f691-4aab-bea0-6d5d9b7c13e1" />
 
 8. Confirmar el aviso de seguridad.
-9. Cerrar el editor de directivas.
+<img width="431" height="201" alt="image" src="https://github.com/user-attachments/assets/c24227cb-7b40-41cf-a090-a1366ecae943" />
+
+10. Cerrar el editor de directivas.
 
 ---
 
@@ -835,13 +838,14 @@ La auditoría permite registrar eventos de **creación, modificación y eliminac
 ```
 SydneyOUPolicy
 ```
+<img width="383" height="174" alt="image" src="https://github.com/user-attachments/assets/4e975e22-71c6-474a-83d9-398e997a1aeb" />
 
 5. Clic derecho sobre **SydneyOUPolicy** → **Editar**.
 6. Navegar a:
 
 ```
 Configuración del equipo
- → Políticas
+ → Directivas
    → Configuración de Windows
      → Configuración de seguridad
        → Configuración avanzada de auditoría
@@ -849,18 +853,19 @@ Configuración del equipo
            → Administración de cuentas
 ```
 
-7. Abrir la directiva:
+7. Abrir la subcategoría:
 
 ```
-Auditoría de administración de cuentas de usuario
+Auditorar administración de cuentas de usuario
 ```
 
 8. Marcar **Configurar los siguientes eventos de auditoría**.
 9. Seleccionar:
 
 ```
-Éxito y Fracaso
+Correcto y Error
 ```
+<img width="898" height="576" alt="image" src="https://github.com/user-attachments/assets/e9f15a59-c929-4e57-9170-9f4f9027370c" />
 
 10. Aplicar y cerrar el editor.
 
