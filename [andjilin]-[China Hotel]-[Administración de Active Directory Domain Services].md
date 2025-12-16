@@ -144,7 +144,7 @@ Contraseña: Pa55w.rdPa55w.rd
 
 # Diagramas de flujo
 
-## 🔧 Flujo: Instalación de Hyper‑V
+## Flujo: Instalación de Hyper‑V
 
 ```mermaid
 flowchart TD
@@ -448,7 +448,7 @@ Sydney Administrators
 
 ---
 
-# 🛡️ Configurar usuario como Protected User
+# Configurar usuario como Protected User
 
 Esta opción aumenta la seguridad del usuario frente a ataques de credenciales.
 
