@@ -752,4 +752,199 @@ El dominio ahora cuenta con:
 * Política más estricta para administradores
 * Capacidad de recuperación de objetos eliminados
 
-Documento listo para subirse a **GitHub** como archivo `.md`.
+# Configuración de las opciones de seguridad
+
+**Objetivo**
+
+Fortalecer la **seguridad del dominio Active Directory** mediante:
+
+* Restricción de la autenticación **NTLM**
+* Habilitación de **auditoría de administración de cuentas**
+* Denegación del **inicio de sesión como servicio** a grupos específicos
+
+Estas configuraciones ayudan a reducir vectores de ataque y a mejorar la trazabilidad de acciones administrativas.
+
+---
+
+# Índice
+
+1. [Restringir la autenticación NTLM]
+2. [Auditoría de la gestión de cuentas de usuario en la OU Sydney]
+3. [Denegar el inicio de sesión como servicio]
+4. [Diagramas de flujo]
+
+---
+
+# Restringir la autenticación NTLM
+
+La desactivación de NTLM reduce el riesgo de ataques como **Pass-the-Hash** y fuerza el uso de métodos de autenticación más seguros.
+
+## Pasos
+
+1. En **TAILWIND-DC1**, abrir **Administración de directivas de grupo** desde **Herramientas**.
+2. Expandir:
+
+```
+Bosque: tailwindtraders.internal
+ → Dominios
+   → tailwindtraders.internal
+     → Objetos de directiva de grupo
+```
+
+3. Clic derecho en **Política de controlador de dominio predeterminada** → **Editar**.
+4. Navegar a:
+
+```
+Configuración del equipo
+ → Políticas
+   → Configuración de Windows
+     → Configuración de seguridad
+       → Políticas locales
+         → Opciones de seguridad
+```
+
+5. Abrir la directiva:
+
+```
+Seguridad de red: Restringir NTLM: Autenticación NTLM en este dominio
+```
+
+6. Marcar **Definir esta configuración de directiva**.
+7. Seleccionar el valor:
+
+```
+Denegar todo
+```
+
+8. Confirmar el aviso de seguridad.
+9. Cerrar el editor de directivas.
+
+---
+
+# Auditoría de la gestión de cuentas de usuario en la OU Sydney
+
+La auditoría permite registrar eventos de **creación, modificación y eliminación de cuentas**, tanto exitosos como fallidos.
+
+## Pasos
+
+1. Abrir **Administración de directivas de grupo**.
+2. Expandir el dominio **tailwindtraders.internal**.
+3. Clic derecho sobre la **OU Sydney** → **Crear un GPO en este dominio y vincularlo aquí**.
+4. Nombre del GPO:
+
+```
+SydneyOUPolicy
+```
+
+5. Clic derecho sobre **SydneyOUPolicy** → **Editar**.
+6. Navegar a:
+
+```
+Configuración del equipo
+ → Políticas
+   → Configuración de Windows
+     → Configuración de seguridad
+       → Configuración avanzada de auditoría
+         → Políticas de auditoría
+           → Administración de cuentas
+```
+
+7. Abrir la directiva:
+
+```
+Auditoría de administración de cuentas de usuario
+```
+
+8. Marcar **Configurar los siguientes eventos de auditoría**.
+9. Seleccionar:
+
+```
+Éxito y Fracaso
+```
+
+10. Aplicar y cerrar el editor.
+
+---
+
+# Denegar el inicio de sesión como servicio
+
+Esta configuración evita que determinados grupos puedan ejecutar servicios de Windows, reduciendo riesgos de abuso de privilegios.
+
+## Pasos
+
+1. En **Administración de directivas de grupo**, expandir el dominio **tailwindtraders.internal**.
+2. Ir a la **OU Sydney**.
+3. Clic derecho sobre **SydneyOUPolicy** → **Editar**.
+4. Navegar a:
+
+```
+Configuración del equipo
+ → Políticas
+   → Configuración de Windows
+     → Configuración de seguridad
+       → Políticas locales
+         → Asignación de derechos de usuario
+```
+
+5. Abrir la directiva:
+
+```
+Denegar inicio de sesión como servicio
+```
+
+6. Marcar **Definir esta directiva**.
+7. Seleccionar **Agregar usuario o grupo**.
+8. Buscar y seleccionar el grupo:
+
+```
+Administradores de Sydney
+```
+
+9. Confirmar todos los cuadros de diálogo.
+
+---
+
+# Diagramas de flujo
+
+## Flujo: Restricción de NTLM
+
+```mermaid
+flowchart TD
+    A[Abrir GPMC] --> B[Editar política de DC]
+    B --> C[Opciones de seguridad]
+    C --> D[Restringir NTLM]
+    D --> E[Denegar todo]
+```
+
+## 📋 Flujo: Auditoría de cuentas
+
+```mermaid
+flowchart TD
+    A[Crear GPO en OU] --> B[Editar GPO]
+    B --> C[Auditoría de cuentas]
+    C --> D[Éxito y Fracaso]
+```
+
+## Flujo: Denegar inicio de sesión como servicio
+
+```mermaid
+flowchart TD
+    A[Editar GPO de OU] --> B[Asignación de derechos]
+    B --> C[Denegar inicio de sesión como servicio]
+    C --> D[Agregar grupo]
+```
+
+---
+
+# ✅ Resultado
+
+El dominio ahora dispone de:
+
+* Autenticación NTLM deshabilitada
+* Auditoría activa sobre cuentas de usuario
+* Restricciones de inicio de sesión por servicio
+
+
+
+
+
