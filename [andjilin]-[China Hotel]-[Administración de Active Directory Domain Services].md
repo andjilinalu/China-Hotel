@@ -679,11 +679,11 @@ Longitud mínima de contraseña: 16
 9. Añadir el grupo:
 
 ```
-Domain Admins
+Admins. del dominio
 ```
 
 10. Comprobar nombres y confirmar.
-(El manual esta mal, me pone nombre no encontrado ya que no hemos creado ningun grupo llamado "Domain Admins" en ningu sitio)
+(El manual esta mal, me pone nombre no encontrado ya que no hemos creado ningun grupo llamado "Domain Admins", esta mal traducido y es Admins. del dominio)
 
 <img width="478" height="362" alt="image" src="https://github.com/user-attachments/assets/4ef7a2b8-00d9-4802-b61c-56d0d5b8a5ec" />
 
