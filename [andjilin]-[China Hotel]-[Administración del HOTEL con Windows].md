@@ -42,21 +42,27 @@ Configurar y gestionar cuentas de usuario para empleados temporales y operativos
 ## Pasos
 
 1. Abrir **Usuarios y equipos de Active Directory**.
-2. Navegar a la OU correspondiente (ej. `OU_Recepción`).
+2. Navegar a la OU correspondiente.
 3. Clic derecho → **Nuevo → Usuario**.
 4. Crear usuarios (ejemplo):
 
 ```
 recep01_temp
-recep02_temp
 camarero01_temp
 ```
+<img width="433" height="376" alt="image" src="https://github.com/user-attachments/assets/66bb0ba9-e0bb-455f-8b28-b887947a7185" />
 
 5. Configurar contraseña inicial.
 6. En **Propiedades → Cuenta**:
+   * Deseleccionamos **El usuario debe cambiar la contraseña en el siguiente inicio de sesión.**.
+   * Definir **caducidad de contraseña(nunca expira)**.
+   * Añadir contraseña segura **Pa55w.rdPa55w.rd**.
+<img width="438" height="374" alt="image" src="https://github.com/user-attachments/assets/2753a206-d62d-4553-9b00-a79bb2da6af8"/>
 
-   * Definir **caducidad de contraseña**.
-   * Configurar **horas permitidas de inicio de sesión**.
+7. Terminamos creando varios usuarios:
+<img width="432" height="376" alt="image" src="https://github.com/user-attachments/assets/fedb3655-f96d-4fea-9fe4-7edfc18c90c7" />
+<img width="435" height="372" alt="image" src="https://github.com/user-attachments/assets/87f76c5a-c118-43e8-86d2-2afe5f22ad03" />
+
 
 ✅ Criterio cubierto: CE a
 
